@@ -1,20 +1,20 @@
 {
   "name": "child-process-helpers",
   "description": "dumb helpers for child_process",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
-  
+
   "main": "index.js",
-  
+
   "repository": {
     "type": "git",
     "url": "git://github.com/stephenhandley/child-process-helpers.git"
   },
-  
-  "bugs": { 
+
+  "bugs": {
     "url" : "git://github.com/stephenhandley/child-process-helpers.git"
   },
-  
+
   "scripts": {
     "test": "node test.js"
   },
@@ -23,15 +23,15 @@
     "child_process",
     "process"
   ],
-  
+
   "engines" : {
-    "node" : ">=0.4.0"
+    "node" : ">=0.10.5"
   },
-  
+
   "devDependencies": {
-    "asserts": "3.x"
+    "asserts": "4.0.x"
   },
-  
+
   "author": {
     "name": "Stephen Handley",
     "email": "stephen.handley@gmail.com",
