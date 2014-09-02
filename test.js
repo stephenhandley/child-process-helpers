@@ -8,21 +8,27 @@ var exec  = CPH.exec;
 Asserts({
   "exec" : {
     "invalid command should error" : function () {
-      exec("asdfsdf", function (error) {
-        Assert.notEqual(error, null);
-        Assert(error.message.match(/command not found/));
-      })
+      exec({
+        cmd : "asdfsdf", 
+        cb  : function (error) {
+          Assert.notEqual(error, null);
+          Assert(error.message.match(/command not found/));
+        }
+      });
     },
 
     "valid command should work" : function () {
-      exec("ls", function (error) {
-        Assert.equal(error, null);
-      })
+      exec({
+        cmd : "ls", 
+        cb  : function (error) {
+          Assert.equal(error, null);
+        }
+      });
     },
 
     "shouldn't require callback" : function () {
       Assert.doesNotThrow(function () {
-        exec("ls");
+        exec({cmd : "ls"});
       });
     }
   },

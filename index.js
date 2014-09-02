@@ -1,6 +1,9 @@
 var ChildProcess = require('child_process');
 
-function spawn (command, args) {
+function spawn (args) {
+  var command = args.cmd;
+  var args    = args.args;
+
   var args_string = args ? ' ' + args.join(' ') : '';
 
   process.stdout.write("" + command + args_string + "\n");
@@ -14,7 +17,11 @@ function spawn (command, args) {
   });
 };
 
-function exec (command, callback) {
+function exec (args) {
+  var command  = args.cmd;
+  var callback = args.cb;
+  var args     = args.args;
+
   process.stdout.write("" + command + "\n");
 
   ChildProcess.exec(command, function(error, stdout, stderr) {
